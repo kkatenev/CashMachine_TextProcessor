@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMachine", "CashMachine\CashMachine.csproj", "{8D8D352A-FA2A-4069-9EEA-9A15B71D0080}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMachine.Tests", "CashMachine.Tests\CashMachine.Tests.csproj", "{69D5F65D-BA9D-4C5E-86D8-0AD77D6BE930}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8D8D352A-FA2A-4069-9EEA-9A15B71D0080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8D352A-FA2A-4069-9EEA-9A15B71D0080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8D352A-FA2A-4069-9EEA-9A15B71D0080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8D352A-FA2A-4069-9EEA-9A15B71D0080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D5F65D-BA9D-4C5E-86D8-0AD77D6BE930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D5F65D-BA9D-4C5E-86D8-0AD77D6BE930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D5F65D-BA9D-4C5E-86D8-0AD77D6BE930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D5F65D-BA9D-4C5E-86D8-0AD77D6BE930}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C4C79855-72E3-440E-91F4-1AD899AEB3A1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+﻿<Window
+    x:Class="CashMachine.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:CashMachine.Converters"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <local:CashMachineDenominationsConverter x:Key="CashMachineDenominationsConverter" />
+        <local:BanknoteToBooleanConverter x:Key="BanknoteToBooleanConverter" />
+    </Window.Resources>
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListBox ItemsSource="{Binding AvailableBanknotesGrouped}" SelectedItem="{Binding SelectedBanknote, Converter={StaticResource CashMachineDenominationsConverter}}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Key}" />
+                        <TextBlock Text=" - " />
+                        <TextBlock Text="{Binding Count}" />
+                        <TextBlock Text=" шт." />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button
+            Grid.Row="1"
+            Command="{Binding DepositCommand}"
+            CommandParameter="{Binding ElementName=DenominationComboBox, Path=SelectedItem}"
+            Content="Пополнить"
+            IsEnabled="{Binding SelectedBanknote, Converter={StaticResource BanknoteToBooleanConverter}}" />
+
+        <DockPanel Grid.Row="2">
+            <Label VerticalAlignment="Center" Content="Выберете номинал купюры и введите сумму для снятия" />
+            <TextBox
+                Width="40"
+                Height="20"
+                HorizontalAlignment="Left"
+                Text="{Binding RemainingAmount}" />
+        </DockPanel>
+        <Button
+            Grid.Row="3"
+            Command="{Binding WithdrawCommand}"
+            CommandParameter="{Binding ElementName=DenominationComboBox, Path=SelectedItem}"
+            Content="Снять"
+            IsEnabled="{Binding SelectedBanknote, Converter={StaticResource BanknoteToBooleanConverter}}" />
+    </Grid>
+</Window>
